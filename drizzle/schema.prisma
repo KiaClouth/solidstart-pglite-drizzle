@@ -1,0 +1,32 @@
+datasource db {
+    provider = "postgresql"
+    url      = env("PG_URL")
+}
+
+generator drizzle {
+    provider = "drizzle-prisma-generator"
+    output   = "./"
+}
+
+enum UserRole {
+    USER
+    ADMIN
+}
+
+model user {
+    id       String   @id
+    name     String
+    userRole UserRole
+    posts    post[]
+}
+
+model post {
+    id          String   @id
+    name        String
+    createdAt   DateTime
+    updatedAt   DateTime @updatedAt
+    createdBy   user     @relation(fields: [createdById], references: [id])
+    createdById String
+
+    @@index([name])
+}

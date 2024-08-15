@@ -1,0 +1,31 @@
+{
+  "name": "toram-calculator",
+  "type": "module",
+  "scripts": {
+    "schema:generate": "prisma generate --schema=./drizzle/schema.prisma",
+    "db:generate": "drizzle-kit generate",
+    "dev": "vinxi dev",
+    "build": "vinxi build",
+    "start": "vinxi start"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.8",
+    "drizzle-kit": "^0.22.7",
+    "drizzle-prisma-generator": "^0.1.6",
+    "postcss": "^8.4.41",
+    "autoprefixer": "^10.4.20",
+    "prisma": "^5.18.0"
+  },
+  "dependencies": {
+    "@electric-sql/client": "^0.3.1",
+    "@electric-sql/pglite": "^0.2.0",
+    "@solidjs/router": "^0.14.1",
+    "@solidjs/start": "^1.0.2",
+    "drizzle-orm": "^0.31.2",
+    "solid-js": "^1.8.18",
+    "vinxi": "^0.4.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
